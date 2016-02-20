@@ -1,7 +1,6 @@
 package party.imata.dnd;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Collections;
 
 /*
@@ -24,7 +23,7 @@ public class InventoryManager
 	
 	public InventoryManager()
 	{
-		
+		//When we write the character class include it in this constructor
 	}
 	
 	public void sortByName()
@@ -51,5 +50,10 @@ public class InventoryManager
 	public void useItem(Item item)
 	{
 		
+	}
+	
+	public Item itemAt(int i)
+	{
+		return inventory.get(i);
 	}
 }

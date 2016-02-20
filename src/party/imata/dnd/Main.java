@@ -4,47 +4,18 @@ public class Main {
 
 	public static void main(String[] args)
 	{
-		Money muns = new Money(0,1,2,3);
-		Money money = new Money(5, -3, 4, 0);
-		Money testyBit = new Money(100, 35, 56, 100);
+		Item camdenSword = new Item("Sword", "DEEZ NUTS BITCHESSSS", 5, new Money(0,15,0,0));
+		Item mead = new Item("Mead", "Yo it's shit", .5, new Money(0,0,0,5));
+		MultiItem arrows = new MultiItem("Arrows", "These are sharp and pointy and used for a bow", 2, new Money(0,2,0,0), 20, 10);
 		
-		muns.addMoney(0, 2, 3, 1);
-		System.out.println(muns);
+		InventoryManager inv = new InventoryManager();
+		inv.addItem(camdenSword);
+		inv.addItem(mead);
+		inv.addItem(arrows);
 		
-		try
-		{
-			muns.removeMoney(-3, 2, 1, 0);
-			System.out.println(muns + " muns");
-		}
-		catch (NotEnoughMoneyException neme)
-		{
-			System.err.println(neme);
-		}
-		
-		try
-		{
-			muns.removeMoney(0, 0, 0, 6);
-			System.out.println("Your muns: " +muns);
-		}
-		catch (NotEnoughMoneyException neme)
-		{
-			System.err.println(neme);
-		}
-		
-		try
-		{
-			testyBit.removeMoney(0, 0, 1, 6);
-			System.out.println("After subtracting: " +testyBit);
-			testyBit.convert();
-			System.out.println("After converting: " + testyBit);
-		}
-		catch (NotEnoughMoneyException neme)
-		{
-			System.err.println(neme);
-		}
-		
-		
-
+		System.out.println(inv.itemAt(0));
+		System.out.println(inv.itemAt(1));
+		System.out.println(inv.itemAt(2));
 	}
 
 }

@@ -9,7 +9,7 @@ public class Money
 	
 	public Money()
 	{
-		
+		// Blank constructor for the lolz
 	}
 	
 	public Money(int plat, int gold, int silver, int copper)
