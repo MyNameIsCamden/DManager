@@ -32,29 +32,31 @@ public class Money
 		convert();
 	}
 	
-	public void removeMoney(int plat, int gold, int silver, int copper)
+	public void removeMoney(int plat, int gold, int silver, int copper) throws NotEnoughMoneyException
 	{
 		int originalCash = (this.plat*1000 + this.gold*100 + this.silver*10 + this.copper);
 		int removedCash = (plat*1000 + gold*100 + silver*10 + copper);
 		
-		if()
-			this.plat -= plat;
-			this.gold -= gold;
-			this.silver -= silver;
-			this.copper -= copper;
+		Money mon = new Money(plat, gold, silver, copper);
+		
+		if(originalCash > removedCash)
+		{
+			this.plat -= mon.getPlat();
+			this.gold -= mon.getGold();
+			this.silver -= mon.getSilver();
+			this.copper -= mon.getCopper();
+		}
+		
+		else
+		{
+			throw new NotEnoughMoneyException();
+		}
 	}
 	
 	private void convert()
 	{
-		if(copper >=0)
-		{
-			silver += copper/10;
-			copper %= 10;
-		}
-		else
-		{
-			
-		}
+		silver += copper/10;
+		copper %= 10;
 		
 		gold += silver/10;
 		silver %= 10;
@@ -102,11 +104,14 @@ public class Money
 	
 	public int compareTo(Money mon)
 	{
-		if()
-	}
-	
-	public boolean isMore(int plat, int gold, int silver, int copper)
-	{
+		int originalCash = (this.plat*1000 + this.gold*100 + this.silver*10 + this.copper);
+		int removedCash = (mon.getPlat()*1000 + mon.getGold()*100 + mon.getSilver()*10 + mon.getCopper());
 		
+		if(originalCash > removedCash)
+			return 1;
+		else if (originalCash == removedCash)
+			return 0;
+		else
+			return -1;
 	}
 }
