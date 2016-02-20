@@ -12,11 +12,11 @@ public class Money
 		
 	}
 	
-	public Money(int plat, int gold, int silver, int copper)
+	public Money(int plat, int gold, int silver, int copper) throws NotEnoughMoneyException
 	{
 		if (plat < 0 || gold < 0 || silver < 0 || copper <0)
 		{
-			System.err.println("You can not have a negative amount of money.");
+			throw new NotEnoughMoneyException("You cannot start with negative money.");
 		}
 		
 		this.plat = plat;
@@ -25,11 +25,11 @@ public class Money
 		this.copper = copper;
 	}
 
-	public void addMoney(int plat, int gold, int silver, int copper)
+	public void addMoney(int plat, int gold, int silver, int copper) throws NotEnoughMoneyException
 	{
 		if(plat < 0 || gold < 0 || silver < 0 || copper <0)
 		{
-			System.err.println("You've entered a negative amount of money.");
+			throw new NotEnoughMoneyException("You've entered a negative amount of money");
 		}
 		
 		this.plat += plat;
