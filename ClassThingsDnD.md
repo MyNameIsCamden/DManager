@@ -1,3 +1,10 @@
++ Dice
+  - int sides
+  - int numberOf
+  
+  + roll
+  + getters/setters
+
 + Money
   - int plat
   - int gold
@@ -6,13 +13,6 @@
   
   + getters/setters
   + toString
-
-+ Dice
-  - int sides
-  - int numberOf
-  
-  + roll
-  + getters/setters
 
 + Item
   - String name
@@ -66,3 +66,11 @@
 + ItemCompareWeight
 
 + ItemCompareName
+
++ Character
+  - String name
+
++ PlayerCharacter
+  - int[] abilityScores
+  - int[] abilityModifiers
+  
