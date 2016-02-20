@@ -14,22 +14,29 @@ public class Money
 	
 	public Money(int plat, int gold, int silver, int copper)
 	{
+		if (plat < 0 || gold < 0 || silver < 0 || copper <0)
+		{
+			System.err.println("You can not have a negative amount of money.");
+		}
+		
 		this.plat = plat;
 		this.gold = gold;
 		this.silver = silver;
 		this.copper = copper;
-		
-		convert();
 	}
 
 	public void addMoney(int plat, int gold, int silver, int copper)
 	{
+		if(plat < 0 || gold < 0 || silver < 0 || copper <0)
+		{
+			System.err.println("You've entered a negative amount of money.");
+		}
+		
 		this.plat += plat;
 		this.gold += gold;
 		this.silver += silver;
 		this.copper += copper;
 		
-		convert();
 	}
 	
 	public void removeMoney(int plat, int gold, int silver, int copper) throws NotEnoughMoneyException
@@ -39,12 +46,14 @@ public class Money
 		
 		Money mon = new Money(plat, gold, silver, copper);
 		
-		if(originalCash > removedCash)
+		if(originalCash >= removedCash)
 		{
 			this.plat -= mon.getPlat();
 			this.gold -= mon.getGold();
 			this.silver -= mon.getSilver();
 			this.copper -= mon.getCopper();
+			
+			checkNegative();
 		}
 		
 		else
@@ -53,7 +62,7 @@ public class Money
 		}
 	}
 	
-	private void convert()
+	public void convert()
 	{
 		silver += copper/10;
 		copper %= 10;
@@ -63,6 +72,54 @@ public class Money
 		
 		plat += gold/10;
 		gold %= 10;
+	}
+	
+	private void checkNegative()
+	{
+		if(copper < 0)
+		{
+			if (copper % 10 == 0)
+			{	
+				silver -= copper / 10;
+			}
+			
+			else
+			{
+				silver -= (copper / 10) + 1;
+			}
+		
+			copper = copper%10 + 10;
+		}
+		
+		else if(silver < 0)
+		{
+			if (silver% 10 == 0)
+			{	
+				gold -= silver / 10;
+			}
+			
+			else
+			{
+				gold -= (silver / 10) + 1;
+			}
+		
+			silver = silver%10 + 10;	
+		}
+		
+		else if(gold < 0)
+		{
+			if (gold% 10 == 0)
+			{	
+				plat -= gold / 10;
+			}
+			
+			else
+			{
+				plat -= (gold / 10) + 1;
+			}
+		
+			plat = gold%10 + 10;
+		}
 	}
 	
 	public int getPlat() {
