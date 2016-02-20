@@ -12,31 +12,34 @@ public class Money
 		
 	}
 	
-	public Money(int plat, int gold, int silver, int copper) throws NotEnoughMoneyException
+	public Money(int plat, int gold, int silver, int copper)
 	{
-		if (plat < 0 || gold < 0 || silver < 0 || copper <0)
+		if (plat < 0 || gold < 0 || silver < 0 || copper < 0)
 		{
-			throw new NotEnoughMoneyException("You cannot start with negative money.");
+			System.err.println("You've inputted a negative amount of money.\nThat's a no go, buddy.");
 		}
-		
-		this.plat = plat;
-		this.gold = gold;
-		this.silver = silver;
-		this.copper = copper;
+		else
+		{
+			this.plat = plat;
+			this.gold = gold;
+			this.silver = silver;
+			this.copper = copper;
+		}
 	}
 
-	public void addMoney(int plat, int gold, int silver, int copper) throws NotEnoughMoneyException
+	public void addMoney(int plat, int gold, int silver, int copper)
 	{
 		if(plat < 0 || gold < 0 || silver < 0 || copper <0)
 		{
-			throw new NotEnoughMoneyException("You've entered a negative amount of money");
+			System.err.println("You've inputted a negative amount of money.\nThat's a no go, man.");
 		}
-		
-		this.plat += plat;
-		this.gold += gold;
-		this.silver += silver;
-		this.copper += copper;
-		
+		else
+		{
+			this.plat += plat;
+			this.gold += gold;
+			this.silver += silver;
+			this.copper += copper;
+		}
 	}
 	
 	public void removeMoney(int plat, int gold, int silver, int copper) throws NotEnoughMoneyException
@@ -58,7 +61,7 @@ public class Money
 		
 		else
 		{
-			throw new NotEnoughMoneyException();
+			throw new NotEnoughMoneyException("You don't have enough money for that.");
 		}
 	}
 	

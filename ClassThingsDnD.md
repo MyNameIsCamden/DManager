@@ -17,7 +17,7 @@
 + Item
   - String name
   - String description
-  - int weight
+  - double weight
   - Money cost
 
   + getters/setters
