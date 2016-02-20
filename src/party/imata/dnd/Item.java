@@ -66,4 +66,13 @@ public class Item
 	{
 		return (name + "\n" + description + "\n" + weight + "lb\n" + cost);
 	}
+	
+	public boolean equals(Item arg)
+	{
+		if(arg.getName().equals(name) && arg.getCost() == cost && arg.getDescription().equals(description) 
+				&& arg.getWeight() == weight)
+			return true;
+		else
+			return false;
+	}
 }

@@ -52,3 +52,17 @@
   - int arcaneSpellFailure
   - int speed
   - int type
+  
++ InventoryManager
+  - double totalWeight
+  - ArrayList<Item> inventory
+  
+  + getters/setters
+  + addItem
+  + removeItem
+  + useItem
+  + toString
+  
++ ItemCompareWeight
+
++ ItemCompareName
