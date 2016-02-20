@@ -14,7 +14,7 @@ public class Item
 {
 	private String name;
 	private String description;
-	private int weight;
+	private double weight;
 	private Money cost;
 	
 	public Item()
@@ -22,11 +22,48 @@ public class Item
 		
 	}
 	
-	public Item(String name, String description, int weight, Money cost)
+	public Item(String name, String description, double weight, Money cost)
 	{
 		this.name = name;
 		this.description = description;
 		this.weight = weight;
 		this.cost = cost;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public Money getCost() {
+		return cost;
+	}
+
+	public void setCost(Money cost) {
+		this.cost = cost;
+	}
+	
+	public String toString()
+	{
+		return (name + "\n" + description + "\n" + weight + "lb\n" + cost);
 	}
 }

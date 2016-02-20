@@ -17,7 +17,7 @@
 + Item
   - String name
   - String description
-  - int weight
+  - double weight
   - Money cost
 
   + getters/setters
@@ -52,7 +52,3 @@
   - int arcaneSpellFailure
   - int speed
   - int type
-  
-  
-    5s 4c
-  - 3s 7c
