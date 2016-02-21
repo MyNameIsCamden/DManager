@@ -58,6 +58,6 @@ public class MultiItem extends Item
 	
 	public String toString()
 	{
-		return (super.toString() + "\n" + count);
+		return (super.toString() + "\n" + count + " of them");
 	}
 }

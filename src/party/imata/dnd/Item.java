@@ -64,7 +64,7 @@ public class Item
 	
 	public String toString()
 	{
-		return (name + "\n" + description + "\n" + weight + "lb\n" + cost);
+		return (name + "\n" + description + "\n" + weight + "lb\nWorth " + cost);
 	}
 	
 	public boolean equals(Item arg)

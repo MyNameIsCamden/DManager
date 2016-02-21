@@ -45,6 +45,7 @@ public class InventoryManager
 	public void removeItem(Item item)
 	{
 		inventory.remove(item);
+		weight -= item.getWeight();
 	}
 	
 	public void useItem(Item item)
@@ -56,4 +57,30 @@ public class InventoryManager
 	{
 		return inventory.get(i);
 	}
+
+	public Money getWallet() {
+		return wallet;
+	}
+
+	public void setWallet(Money wallet) {
+		this.wallet = wallet;
+	}
+
+	public ArrayList<Item> getInventory() {
+		return inventory;
+	}
+
+	public void setInventory(ArrayList<Item> inventory) {
+		this.inventory = inventory;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+	
+	
 }

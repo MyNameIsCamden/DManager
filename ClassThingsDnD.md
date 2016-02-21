@@ -51,7 +51,7 @@
   - int acPenalty
   - int arcaneSpellFailure
   - int speed
-  - int type
+  - String type
   
 + InventoryManager
   - double totalWeight
@@ -132,7 +132,6 @@
   + getters/setters
   + toString
 
-
 + SpellList
   - Class class
   - int[] spellsPerDay
@@ -142,5 +141,6 @@
   + longRest
   + getters/setters
   + toString
+  
 + Class
   - TBD
