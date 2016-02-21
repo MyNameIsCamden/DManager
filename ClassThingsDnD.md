@@ -56,7 +56,8 @@
 + InventoryManager
   - double totalWeight
   - ArrayList<Item> inventory
-  
+  - int actualSpeed  
+
   + getters/setters
   + addItem
   + removeItem
@@ -69,8 +70,77 @@
 
 + Character
   - String name
+  - String description  
+
+  + getters/setters
+  + toString
+
++ NonPlayerCharacter
+  - String personality
+
+  + getters/setters
+  + toString  
+
++ FightingCharacter
+  -
 
 + PlayerCharacter
   - int[] abilityScores
   - int[] abilityModifiers
+  - InventoryManager inventory
+  - Class class
+  - int level
+  - int exp
+  - int neededExp
+  - int baseSpeed
+  - int currentHp
+  - int maxHp
+  - int ac
+  - int touchAc
+  - int flatfootedAc
+  - Skills[] skills
+  - Feat[] feats
   
+  + getters/setters
+  + toString
+
++ Skill
+  - String name
+  - String keyAbility
+  - Boolean[] classSkill
+  - int ranks
+  - int skillMod
+  - int miscMod
+  
+  + getters/setters
+  + incrementRank
+  + toString
+
++ Feat
+  - String name
+  - String description
+  
+  + getters/setters
+  + toString
+
++ Spell
+  - String name
+  - String description
+  - String components
+  - int levelNeeded
+  
+  + getters/setters
+  + toString
+
+
++ SpellList
+  - Class class
+  - int[] spellsPerDay
+  - int[] spellsKnown
+  
+  + castSpell
+  + longRest
+  + getters/setters
+  + toString
++ Class
+  - TBD
