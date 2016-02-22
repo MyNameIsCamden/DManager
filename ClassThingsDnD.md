@@ -88,18 +88,20 @@
   - int[] abilityScores
   - int[] abilityModifiers
   - InventoryManager inventory
-  - Class class
+  - PlayerClass playerClass
   - int level
   - int exp
   - int neededExp
   - int baseSpeed
+  - int intitiative
   - int currentHp
   - int maxHp
   - int ac
   - int touchAc
   - int flatfootedAc
-  - Skills[] skills
-  - Feat[] feats
+  - ArrayList<Skill> skills
+  - ArrayList<Feat> feats
+  - SpellList spells
   
   + getters/setters
   + toString
@@ -133,7 +135,7 @@
   + toString
 
 + SpellList
-  - Class class
+  - PlayerClass playerClass
   - int[] spellsPerDay
   - int[] spellsKnown
   
@@ -142,5 +144,15 @@
   + getters/setters
   + toString
   
-+ Class
++ PlayerClass
   - TBD
+
++ ItemScraper
+
++ InitiativeTracker
+  - ArrayList<Character>
+  - int[] initiative
+  
+  + toString
+  + getters/setters
+  + 
