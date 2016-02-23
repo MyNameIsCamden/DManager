@@ -31,7 +31,6 @@ public class PlayerCharacter extends Character
 	private int[] abilityModifiers;
 	private InventoryManager inventory;
 	private PlayerClass playerClass;
-	private String race;
 	private int featNumber;
 	private int bonusFeats;
 	private int level;
@@ -53,9 +52,9 @@ public class PlayerCharacter extends Character
 		super();
 	}
 	
-	public PlayerCharacter(String name, int[] abilityScores, PlayerClass playerClass, int level, int maxHp)
-	{
-		super(name);
+	public PlayerCharacter(String name, String race, String alignment, String eyeColor, String hairColor, double height, int[] abilityScores, PlayerClass playerClass, int level, char size, int maxHp)
+	{ // Full Constructor
+		super(name, race, alignment, eyeColor, hairColor, height, maxHp, maxHp, size, maxHp);
 		this.abilityScores = abilityScores;
 		this.playerClass = playerClass;
 		this.level = level;
@@ -120,7 +119,7 @@ public class PlayerCharacter extends Character
 	{
 		int numberOfFeats = 1;
 		
-		if(race.equals("Human"))
+		if(getRace().equals("Human"))
 		{
 			numberOfFeats++;
 		}
