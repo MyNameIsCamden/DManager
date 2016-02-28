@@ -1,6 +1,8 @@
 package party.imata.player;
 
-public class PlayerClass 
+// Is this void now with class defs?
+
+public class PlayerClass
 {
 	private String name;
 	private String alignment;
