@@ -1,6 +1,11 @@
-package party.imata.dnd;
+package party.imata.player;
 
 import java.util.ArrayList;
+
+import party.imata.dnd.Character;
+import party.imata.dnd.Feat;
+import party.imata.dnd.InventoryManager;
+import party.imata.dnd.Skill;
 
 /*
   - int[] abilityScores
