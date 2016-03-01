@@ -2,6 +2,7 @@ package party.imata.test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -13,6 +14,9 @@ public class SqlitePull
 	public static void main(String[] args)
 	{
 		Connection connection = null;
+		
+		String tableNames[] = {"class","equipment","feat","item","monster","skill","spell"};
+		
         try
         {
           // create a database connection
@@ -20,9 +24,19 @@ public class SqlitePull
           Statement statement = connection.createStatement();
           statement.setQueryTimeout(30);  // set timeout to 30 sec.
           
-          ResultSet rs = statement.executeQuery("select * from class");
+          String tableName = "";
+          int tableLength = 100;
           
-          PlayerClass[] classTest = new PlayerClass[54];
+          String sql = "SELECT * FROM " + tableName + "";
+          PreparedStatement preparedStatement = connection.prepareStatement(sql);
+          preparedStatement.setString(1, tableName);
+          ResultSet rs = preparedStatement.executeQuery();
+          
+          //ResultSet rs = statement.executeQuery("select * from class");
+          
+          PlayerClass[] classTest = new PlayerClass[tableLength];
+          
+          
     	  int x = 0;
           while(rs.next())
           {

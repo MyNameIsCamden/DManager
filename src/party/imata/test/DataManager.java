@@ -21,5 +21,14 @@ public class DataManager
 	private Monster[] m;
 	private Spell[] sp;
 	private Skill[] sk;
-
+	
+	public DataManager(PlayerClass[] pc, Item[] i, Monster[] m, Spell[] sp, Skill[] sk)
+	{
+		this.pc = pc;
+		this.i = i;
+		this.m = m;
+		this.sp = sp;
+		this.sk = sk;
+	}
+	
 }
