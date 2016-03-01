@@ -12,7 +12,12 @@ public class PlayerClass
 	private int baseSkillPoints;
 	private int addSkillPoints;
 	
-	
+	public PlayerClass(String name, String alignment, int hitDie)
+	{
+		this.name = name;
+		this.alignment = alignment;
+		this.hitDie = hitDie;
+	}
 	public String getName()
 	{
 		return name;
@@ -68,5 +73,10 @@ public class PlayerClass
 	public void setAddSkillPoints(int addSkillPoints)
 	{
 		this.addSkillPoints = addSkillPoints;
+	}
+	
+	public String toString()
+	{
+		return ("Class Name: " + getName() + "\n" + "Class Alignment: " + getAlignment() + "\n" + "Hit Die = d" + getHitDie());
 	}
 }
